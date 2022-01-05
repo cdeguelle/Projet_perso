@@ -1,7 +1,6 @@
 nav {
     background-color: #161B22;
     padding: 20px 0;
-    box-shadow: 0px 5px 0px #dedede;
 }
 nav ul {
     list-style: none;
@@ -42,6 +41,7 @@ nav ul li a:after {
     visibility: none;
     opacity: 0;
     z-index: -1;
+    border-radius: 5px;
 }
 nav ul li a:hover {
     color: white;

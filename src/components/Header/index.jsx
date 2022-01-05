@@ -3,6 +3,8 @@ import './index.css'
 
 const NavContainer = styled.nav`
     background-color: #161B22;
+    width: 100%;
+    position: fixed;
 `
 
 const MenuItems = styled.ul`

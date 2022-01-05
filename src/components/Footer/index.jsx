@@ -18,6 +18,7 @@ const FooterBorder = styled.div`
 const FooterText = styled.p`
     margin: 0;
     padding: 0;
+    color: #838080;
 `
 
 function Footer() {
