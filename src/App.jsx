@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import GlobalStyle from './utils/style/GlobalStyle'
 import Skills from './pages/Skills'
+import Portfolio from './pages/portfolio'
 
 const App = () => {  
     return (
@@ -18,6 +19,7 @@ const App = () => {
                         <Home id='welcome' />
                         <About id='about' />
                         <Skills id='portfolio' />
+                        <Portfolio id='resume' />
                     </main>
                 </Route>
             </Switch>

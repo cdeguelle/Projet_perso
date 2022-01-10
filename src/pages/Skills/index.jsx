@@ -6,13 +6,14 @@ const SkillsWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 60vh;
+    height: 40vh;
 `
 
 const Card = styled.div`
     border-radius: 25px;
     background: #fff;
     margin-top: -200px;
+    padding: 20px;
 `
 
 const CardContent = styled.div`
@@ -36,7 +37,7 @@ const CardTitle = styled.h2`
 `
 
 const Description = styled.p`
-    width: 450px;
+    margin: 20px;
 `
 
 const CardSubTitle = styled.h3`
@@ -50,6 +51,7 @@ const CardSubTitle = styled.h3`
 
 const List = styled.div`
     display: flex;
+    margin: 20px;
 `
 
 function Skills() {
@@ -63,7 +65,7 @@ function Skills() {
                     </CardTitle>
                     <Description>J'aime coder des choses à partir de zéro et intégrer des fonctionnalités complexes.</Description>
                     <CardSubTitle>languages utilisés</CardSubTitle>
-                    <p>HTML, CSS, Sass, Javascript</p>
+                    <Description>HTML, CSS, Sass, Javascript</Description>
                     <CardSubTitle>dev tools</CardSubTitle>
                     <List>
                         <ul style={{ marginRight: '30px' }}>

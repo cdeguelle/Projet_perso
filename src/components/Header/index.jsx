@@ -5,6 +5,7 @@ const NavContainer = styled.nav`
     background-color: #161B22;
     width: 100%;
     position: fixed;
+    z-index: 10;
 `
 
 const MenuItems = styled.ul`

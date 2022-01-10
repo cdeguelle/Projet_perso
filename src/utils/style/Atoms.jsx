@@ -5,6 +5,7 @@ export const Subtitle = styled.h2`
     font-size: 50px;
     color: white;
     margin-bottom: 0;
+    margin-top: 50px;
 `
 
 export const Text = styled.p`
