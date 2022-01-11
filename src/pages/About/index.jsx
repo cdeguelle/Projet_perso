@@ -21,7 +21,7 @@ const Text = styled.p`
 
 function About() {
     return (
-        <AboutWrapper>
+        <AboutWrapper id='about'>
             <Subtitle>A propos de moi</Subtitle>
             <TitleUnderline />
             <Text>Développeur front-end junior certifié après un an de formation chez OpenClassrooms. Lors de cette formation, j’ai eu dix projets à réaliser allant de l’intégration d’une maquette à la création d’un algorithme de recherche et en finissant par me spécialiser dans le framework javascript React.js. Tout ceci vous est présenté ici même, bonne visite.</Text>

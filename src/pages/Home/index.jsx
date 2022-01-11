@@ -28,7 +28,7 @@ const Title = styled.h1`
 
 function Home() {
     return (
-        <HomeWrapper>
+        <HomeWrapper id='welcome'>
             <TitleWrapper>
                 <Title>Clément Deguelle</Title>
                 <Subtitle>Développeur front-end</Subtitle>

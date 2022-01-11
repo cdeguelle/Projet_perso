@@ -12,12 +12,14 @@ import { Subtitle } from '../../utils/style/Atoms'
 import TitleUnderline from './../../components/TitleUnderline'
 import styled from 'styled-components'
 import Card from '../../components/Card'
+import './index.css'
 
 const PortfolioWrapper = styled.div`
     background-color: #161B22;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 50px;
 `
 
 const CardContainer = styled.div`
@@ -41,7 +43,7 @@ const Text = styled.p`
 
 function Portfolio() {
     return (
-        <PortfolioWrapper>
+        <PortfolioWrapper id='portfolio'>
             <Subtitle>Mon travail récent</Subtitle>
             <TitleUnderline />
             <Text>Voici quelques projets sur lesquels j'ai travaillé récemment. Vous voulez en voir plus ?</Text>
@@ -166,6 +168,7 @@ function Portfolio() {
                     }
                 />
             </CardContainer>
+            <a className='button' href='https://github.com/cdeguelle'>Voir plus sur GitHub</a>
         </PortfolioWrapper>
     )
 }

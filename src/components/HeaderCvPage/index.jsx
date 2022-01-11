@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import './index.css'
+import { Link } from "react-router-dom"
+import './../HeaderHomePage/index.css'
 
 const NavContainer = styled.nav`
     background-color: #161B22;
@@ -19,11 +20,8 @@ function Header() {
     return (
         <NavContainer className="nav">
             <MenuItems>
-                <li><a href="#welcome">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#portfolio">Skills</a></li>
-                <li><a href="#resume">Portfolio</a></li>
-                <li><a href="#contactMe">Contact Me</a></li>
+                <li><Link to='/'>Home</Link></li>
+                <li><a href="mailto:clement.deguelle@hotmail.com">Contact Me</a></li>
             </MenuItems>
         </NavContainer>
     )

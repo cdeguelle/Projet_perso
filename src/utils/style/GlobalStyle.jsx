@@ -23,9 +23,6 @@ const StyledGlobalStyle = createGlobalStyle`
         line-height: 25px!important;
         letter-spacing: 2px!important;
     }
-    main {
-        margin-top: 140px;
-    }
 `
 
 export default StyledGlobalStyle
