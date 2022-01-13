@@ -1,1 +1,1 @@
-export const selectUser = (state) => state.user
+export const selectTheme = (state) => state.theme

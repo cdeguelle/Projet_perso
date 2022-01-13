@@ -1,6 +1,8 @@
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
+import { selectTheme } from '../../utils/selectors'
 
-const TitleUnderline = styled.div`
+const TitleUnderlineWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +10,7 @@ const TitleUnderline = styled.div`
 `
 
 const SmallUnderline = styled.span`
-    background: white;
+    background: ${({ theme }) => (theme === 'light' ? '#1d1d1f' : 'white')};
     width: 17px;
     height: 4px;
     display: inline-block;
@@ -16,22 +18,23 @@ const SmallUnderline = styled.span`
 `
 
 const BigUnderline = styled.span`
-    background: linear-gradient(70deg, blue, pink);
+    background: ${({ theme }) => (theme === 'light' ? 'linear-gradient(70deg, #008080, #ff5100)' : 'linear-gradient(70deg, blue, pink)')}; 
     height: 4px;
     display: inline-block;
     width: 145px;
     margin: 0 2px;
 `
 
-function Footer() {
+function TitleUnderline() {
+    const theme = useSelector(selectTheme)
 
     return (
-        <TitleUnderline>
-            <SmallUnderline />
-            <BigUnderline />
-            <SmallUnderline />
-        </TitleUnderline>
+        <TitleUnderlineWrapper>
+            <SmallUnderline theme={theme} />
+            <BigUnderline theme={theme} />
+            <SmallUnderline theme={theme} />
+        </TitleUnderlineWrapper>
     )
 }
 
-export default Footer
+export default TitleUnderline

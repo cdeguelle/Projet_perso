@@ -1,11 +1,13 @@
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
+import { selectTheme } from '../../utils/selectors'
 
 const FooterContainer = styled.footer`
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 2rem 0 1.5rem;
-    background-color: #0D1117;
+    background-color: ${({ theme }) => (theme === 'light' ? '#f3f3f3' : '#0D1117')};
 `
 
 const FooterBorder = styled.div`
@@ -22,9 +24,10 @@ const FooterText = styled.p`
 `
 
 function Footer() {
+    const theme = useSelector(selectTheme)
 
     return (
-        <FooterContainer>
+        <FooterContainer theme={theme}>
             <FooterBorder />
             <FooterText>Portfolio 2021 créé par Clément Deguelle</FooterText>
         </FooterContainer>

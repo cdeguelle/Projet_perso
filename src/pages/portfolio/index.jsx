@@ -13,9 +13,11 @@ import TitleUnderline from './../../components/TitleUnderline'
 import styled from 'styled-components'
 import Card from '../../components/Card'
 import './index.css'
+import { useSelector } from 'react-redux'
+import { selectTheme } from '../../utils/selectors'
 
 const PortfolioWrapper = styled.div`
-    background-color: #161B22;
+    background-color: ${({ theme }) => (theme === 'light' ? '#F9F9FC' : '#161B22')};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,7 +25,7 @@ const PortfolioWrapper = styled.div`
 `
 
 const CardContainer = styled.div`
-    background-color: #161B22;
+    background-color: ${({ theme }) => (theme === 'light' ? '#F9F9FC' : '#161B22')};
     display: grid;
     grid-template-columns: 360px 360px 360px;
     gap: 130px;
@@ -37,17 +39,19 @@ const CardBackDescription = styled.div`
 `
 
 const Text = styled.p`
-    color: #fff;
+    color: ${({ theme }) => (theme === 'light' ? '#1d1d1f' : 'white')};
     margin-top: 30px;
 `
 
 function Portfolio() {
+    const theme = useSelector(selectTheme)
+
     return (
-        <PortfolioWrapper id='portfolio'>
-            <Subtitle>Mon travail récent</Subtitle>
+        <PortfolioWrapper id='portfolio' theme={theme}>
+            <Subtitle theme={theme}>Mon travail récent</Subtitle>
             <TitleUnderline />
-            <Text>Voici quelques projets sur lesquels j'ai travaillé récemment. Vous voulez en voir plus ?</Text>
-            <CardContainer>
+            <Text theme={theme}>Voici quelques projets sur lesquels j'ai travaillé récemment. Vous voulez en voir plus ?</Text>
+            <CardContainer theme={theme}>
                 <Card
                     link='https://github.com/cdeguelle/ClementDeguelle_2_07122020'
                     picture={reserviaImg}

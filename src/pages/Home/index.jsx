@@ -1,9 +1,11 @@
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
+import { selectTheme } from '../../utils/selectors'
 import { Subtitle } from '../../utils/style/Atoms'
 import { Text } from '../../utils/style/Atoms'
 
 const HomeWrapper = styled.div`
-    background-color: #0D1117;
+    background-color: ${({ theme }) => (theme === 'light' ? '#f3f3f3' : '#0D1117')};
     height: 80vh;
 `
 
@@ -18,7 +20,7 @@ const TitleWrapper = styled.div`
 const Title = styled.h1`
     font-family: 'Miriam Libre', sans-serif;
     font-size: 100px;
-    background: linear-gradient(70deg, blue, pink); 
+    background: ${({ theme }) => (theme === 'light' ? 'linear-gradient(70deg, #008080, #ff5100)' : 'linear-gradient(70deg, blue, pink)')}; 
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -27,12 +29,14 @@ const Title = styled.h1`
 `
 
 function Home() {
+    const theme = useSelector(selectTheme)
+
     return (
-        <HomeWrapper id='welcome'>
+        <HomeWrapper id='welcome' theme={theme}>
             <TitleWrapper>
-                <Title>Clément Deguelle</Title>
-                <Subtitle>Développeur front-end</Subtitle>
-                <Text>Je conçois et code des choses magnifiquement simples, et j'aime ce que je fais.</Text>
+                <Title theme={theme}>Clément Deguelle</Title>
+                <Subtitle theme={theme}>Développeur front-end</Subtitle>
+                <Text theme={theme}>Coder simplement, coder proprement, coder efficacement.</Text>
             </TitleWrapper>
         </HomeWrapper>
     )
