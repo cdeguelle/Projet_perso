@@ -115,7 +115,6 @@ const StyledLink = styled(Link)`
 function Header() {
     const theme = useSelector(selectTheme)
     const dispatch = useDispatch()
-    const isMobile = window.matchMedia('(max-width: 426px)').matches
 
     return (
         <NavContainer theme={theme}>
