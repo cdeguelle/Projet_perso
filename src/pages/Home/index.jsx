@@ -12,14 +12,14 @@ const HomeWrapper = styled.div`
 const TitleWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: ${({ isMobile }) => (isMobile ? 'center' : 'flex-start')};
     justify-content: center;
-    margin-left: 100px;
+    margin-left: ${({ isMobile }) => (isMobile ? '0px' : '100px')};
 `
 
 const Title = styled.h1`
     font-family: 'Miriam Libre', sans-serif;
-    font-size: 100px;
+    font-size: ${({ isMobile }) => (isMobile ? '50px' : '100px')};
     background: ${({ theme }) => (theme === 'light' ? 'linear-gradient(70deg, #008080, #ff5100)' : 'linear-gradient(70deg, blue, pink)')}; 
     color: transparent;
     background-clip: text;
@@ -30,13 +30,14 @@ const Title = styled.h1`
 
 function Home() {
     const theme = useSelector(selectTheme)
+    const isMobile = window.matchMedia('(max-width: 426px)').matches
 
     return (
         <HomeWrapper id='welcome' theme={theme}>
-            <TitleWrapper>
-                <Title theme={theme}>Clément Deguelle</Title>
-                <Subtitle theme={theme}>Développeur front-end</Subtitle>
-                <Text theme={theme}>Coder simplement, coder proprement, coder efficacement.</Text>
+            <TitleWrapper isMobile={isMobile}>
+                <Title theme={theme} isMobile={isMobile}>Clément Deguelle</Title>
+                <Subtitle theme={theme} isMobile={isMobile}>Développeur front-end</Subtitle>
+                <Text theme={theme} isMobile={isMobile}>Coder simplement, coder proprement, coder efficacement.</Text>
             </TitleWrapper>
         </HomeWrapper>
     )

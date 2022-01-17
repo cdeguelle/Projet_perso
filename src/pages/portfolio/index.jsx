@@ -26,10 +26,10 @@ const PortfolioWrapper = styled.div`
 
 const CardContainer = styled.div`
     background-color: ${({ theme }) => (theme === 'light' ? '#F9F9FC' : '#161B22')};
-    display: grid;
-    grid-template-columns: 360px 360px 360px;
-    gap: 130px;
-    margin: 80px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 80px 20px;
 `
 
 const CardBackDescription = styled.div`
@@ -41,16 +41,34 @@ const CardBackDescription = styled.div`
 const Text = styled.p`
     color: ${({ theme }) => (theme === 'light' ? '#1d1d1f' : 'white')};
     margin-top: 30px;
+    font-size: ${({ isMobile }) => (isMobile ? '8px' : '16px')};
+`
+
+const Button = styled.a`
+        width: ${({ isMobile }) => (isMobile ? '80vw' : '380px')};
+        height: 86px;
+        font-size: 1.5rem;
+        font-family: 'Miriam Libre', sans-serif;
+        background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+        border: 0;
+        color: #fff;
+        letter-spacing: 3px;
+        line-height: 88px;
+        box-shadow: 6px 0px 0px #00e6f6;
+        outline: transparent;
+        position: relative;
+        text-decoration: none !important;
 `
 
 function Portfolio() {
     const theme = useSelector(selectTheme)
+    const isMobile = window.matchMedia('(max-width: 426px)').matches
 
     return (
         <PortfolioWrapper id='portfolio' theme={theme}>
-            <Subtitle theme={theme}>Mon travail récent</Subtitle>
+            <Subtitle theme={theme} isMobile={isMobile}>Mon travail récent</Subtitle>
             <TitleUnderline />
-            <Text theme={theme}>Voici quelques projets sur lesquels j'ai travaillé récemment. Vous voulez en voir plus ?</Text>
+            <Text theme={theme} isMobile={isMobile}>Voici quelques projets sur lesquels j'ai travaillé récemment. Vous voulez en voir plus ?</Text>
             <CardContainer theme={theme}>
                 <Card
                     link='https://github.com/cdeguelle/ClementDeguelle_2_07122020'
@@ -172,7 +190,7 @@ function Portfolio() {
                     }
                 />
             </CardContainer>
-            <a className='button' href='https://github.com/cdeguelle'>Voir plus sur GitHub</a>
+            <Button className='button' href='https://github.com/cdeguelle' isMobile={isMobile}>Voir plus sur GitHub</Button>
         </PortfolioWrapper>
     )
 }

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { selectTheme } from '../../utils/selectors'
 import { SwitchButton } from '../Switch'
 import * as themeActions from '../../features/theme'
+import MenuListComposition from '../MenuList'
 
 const NavContainer = styled.nav`
     background-color: ${({ theme }) => (theme === 'light' ? '#F9F9FC' : '#161B22')};
@@ -33,7 +34,7 @@ const HeaderLink = styled.a`
     font-weight: 800;
     text-transform: uppercase;
     margin: 0 10px;
-    position:relative;
+    position: relative;
     z-index: 1;
     transition: all 0.5s;
     &:after {
@@ -71,17 +72,36 @@ const HeaderLink = styled.a`
 function Header() {
     const theme = useSelector(selectTheme)
     const dispatch = useDispatch()
+    const isMobile = window.matchMedia('(max-width: 426px)').matches
+    const menuItems = [
+        {href: '#welcome', text: 'Home'},
+        {href: '#about', text: 'About Me'},
+        {href: '#portfolio', text: 'Home'},
+        {href: '#cv', text: 'CV'},
+        {href: 'mailto:clement.deguelle@hotmail.com', text: 'Contact Me'}
+    ]
 
     return (
         <NavContainer theme={theme}>
-            <MenuItems>
-                <ListItems><HeaderLink theme={theme} href="#welcome">Home</HeaderLink></ListItems>
-                <ListItems><HeaderLink theme={theme} href="#about">About Me</HeaderLink></ListItems>
-                <ListItems><HeaderLink theme={theme} href="#portfolio">Portfolio</HeaderLink></ListItems>
-                <ListItems><HeaderLink theme={theme} href="#cv">CV</HeaderLink></ListItems>
-                <ListItems><HeaderLink theme={theme} href="mailto:clement.deguelle@hotmail.com">Contact Me</HeaderLink></ListItems>
-                <ListItems><SwitchButton onClick={() => dispatch(themeActions.toggle())} /></ListItems>
-            </MenuItems>
+            {isMobile ? (
+                <MenuItems>
+                    <ListItems>
+                        <MenuListComposition 
+                            menuItems={menuItems}
+                        />
+                    </ListItems>
+                    <ListItems><SwitchButton onClick={() => dispatch(themeActions.toggle())} /></ListItems>
+                </MenuItems>                
+            ) : (
+                <MenuItems>
+                    <ListItems><HeaderLink theme={theme} href="#welcome">Home</HeaderLink></ListItems>
+                    <ListItems><HeaderLink theme={theme} href="#about">About Me</HeaderLink></ListItems>
+                    <ListItems><HeaderLink theme={theme} href="#portfolio">Portfolio</HeaderLink></ListItems>
+                    <ListItems><HeaderLink theme={theme} href="#cv">CV</HeaderLink></ListItems>
+                    <ListItems><HeaderLink theme={theme} href="mailto:clement.deguelle@hotmail.com">Contact Me</HeaderLink></ListItems>
+                    <ListItems><SwitchButton onClick={() => dispatch(themeActions.toggle())} /></ListItems>
+                </MenuItems>
+            )}
         </NavContainer>
     )
 }

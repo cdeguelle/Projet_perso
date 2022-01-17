@@ -8,12 +8,17 @@ const CvWrapper = styled.div`
     padding-top: 200px;
 `
 
+const CvDoc = styled.img`
+    height: ${({ isMobile }) => (isMobile ? '60vh' : '100vh')};
+`
+
 function CvPage() {
     const theme = useSelector(selectTheme)
+    const isMobile = window.matchMedia('(max-width: 426px)').matches
 
     return (
         <CvWrapper theme={theme}>
-            <img src={cvdocImg} alt='CV document'/>
+            <CvDoc src={cvdocImg} alt='CV document' isMobile={isMobile} />
         </CvWrapper>
     )
 }

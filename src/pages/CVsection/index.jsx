@@ -18,30 +18,31 @@ const LinksWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-top: 120px;
-    width: 30%;
+    width: ${({ isMobile }) => (isMobile ? '50%' : '30%')};
 `
 
 const Icon = styled.i`
-    font-size: 100px;
+    font-size: ${({ isMobile }) => (isMobile ? '50px' : '100px')};
     color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
 `
 
 function CvSection() {
     const theme = useSelector(selectTheme)
+    const isMobile = window.matchMedia('(max-width: 426px)').matches
 
     return (
         <CvWrapper id='cv' theme={theme}>
-            <Subtitle theme={theme}>Cv et liens sociaux</Subtitle>
+            <Subtitle theme={theme} isMobile={isMobile}>Cv et liens sociaux</Subtitle>
             <TitleUnderline />
-            <LinksWrapper>
+            <LinksWrapper isMobile={isMobile}>
                 <Link to='/cv'>
-                    <Icon className="fas fa-graduation-cap" theme={theme}></Icon>
+                    <Icon isMobile={isMobile} className="fas fa-graduation-cap" theme={theme}></Icon>
                 </Link>
                 <a href='https://www.linkedin.com/in/cl%C3%A9ment-deguelle-2a061788/'>
-                    <Icon className="fab fa-linkedin" theme={theme}></Icon>
+                    <Icon isMobile={isMobile} className="fab fa-linkedin" theme={theme}></Icon>
                 </a>
                 <a href='https://github.com/cdeguelle'>
-                    <Icon className="fab fa-github" theme={theme}></Icon>
+                    <Icon isMobile={isMobile} className="fab fa-github" theme={theme}></Icon>
                 </a>
             </LinksWrapper>
         </CvWrapper>

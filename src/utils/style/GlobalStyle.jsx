@@ -19,7 +19,6 @@ const StyledGlobalStyle = createGlobalStyle`
         min-height: 100vh;
     }
     p {
-        font-size: 16px!important;
         line-height: 25px!important;
         letter-spacing: 2px!important;
     }

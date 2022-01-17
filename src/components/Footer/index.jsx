@@ -8,6 +8,7 @@ const FooterContainer = styled.footer`
     justify-content: center;
     padding: 2rem 0 1.5rem;
     background-color: ${({ theme }) => (theme === 'light' ? '#f3f3f3' : '#0D1117')};
+    height: 20vh;
 `
 
 const FooterBorder = styled.div`
@@ -21,15 +22,17 @@ const FooterText = styled.p`
     margin: 0;
     padding: 0;
     color: #838080;
+    font-size: ${({ isMobile }) => (isMobile ? '8px' : '16px')};
 `
 
 function Footer() {
     const theme = useSelector(selectTheme)
+    const isMobile = window.matchMedia('(max-width: 426px)').matches
 
     return (
         <FooterContainer theme={theme}>
             <FooterBorder />
-            <FooterText>Portfolio 2021 créé par Clément Deguelle</FooterText>
+            <FooterText isMobile={isMobile}>Portfolio 2021 créé par Clément Deguelle</FooterText>
         </FooterContainer>
     )
 }
