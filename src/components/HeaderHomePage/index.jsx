@@ -94,11 +94,11 @@ function Header() {
                 </MenuItems>                
             ) : (
                 <MenuItems>
-                    <ListItems><HeaderLink theme={theme} href="#welcome">Home</HeaderLink></ListItems>
-                    <ListItems><HeaderLink theme={theme} href="#about">About Me</HeaderLink></ListItems>
+                    <ListItems><HeaderLink theme={theme} href="#welcome">Acceuil</HeaderLink></ListItems>
+                    <ListItems><HeaderLink theme={theme} href="#about">A propos</HeaderLink></ListItems>
                     <ListItems><HeaderLink theme={theme} href="#portfolio">Portfolio</HeaderLink></ListItems>
                     <ListItems><HeaderLink theme={theme} href="#cv">CV</HeaderLink></ListItems>
-                    <ListItems><HeaderLink theme={theme} href="mailto:clement.deguelle@hotmail.com">Contact Me</HeaderLink></ListItems>
+                    <ListItems><HeaderLink theme={theme} href="mailto:clement.deguelle@hotmail.com">Me contacter</HeaderLink></ListItems>
                     <ListItems><SwitchButton onClick={() => dispatch(themeActions.toggle())} /></ListItems>
                 </MenuItems>
             )}
