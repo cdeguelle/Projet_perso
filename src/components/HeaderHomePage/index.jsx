@@ -39,9 +39,6 @@ const HeaderLink = styled.a`
     transition: all 0.5s;
     &:after {
         transition: all 0.5s;
-    }
-    &:after {
-        transition: all 0.5s;
         display: block;
         position: absolute;
         top: 0;
