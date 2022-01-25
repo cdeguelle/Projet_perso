@@ -12,12 +12,12 @@ const NavContainer = styled.nav`
     position: fixed;
     z-index: 10;
     padding: 20px 0;
+    height: 10vh;
 `
 
 const MenuItems = styled.ul`
     display: flex;
     justify-content: space-around;
-    margin: 30px;
     list-style: none;
     text-align: center;
 `
