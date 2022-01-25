@@ -38,10 +38,10 @@ function CvSection() {
                 <Link to='/cv'>
                     <Icon isMobile={isMobile} className="fas fa-graduation-cap" theme={theme}></Icon>
                 </Link>
-                <a href='https://www.linkedin.com/in/cl%C3%A9ment-deguelle-2a061788/' title='Consulter le profil linkedin de Clément Deguelle'>
+                <a href='https://www.linkedin.com/in/cl%C3%A9ment-deguelle-2a061788/' title='Consulter le profil linkedin de Clément Deguelle' target="_blank" rel="noreferrer">
                     <Icon isMobile={isMobile} className="fab fa-linkedin" theme={theme}></Icon>
                 </a>
-                <a href='https://github.com/cdeguelle' title='Consulter le profil github de Clément Deguelle'>
+                <a href='https://github.com/cdeguelle' title='Consulter le profil github de Clément Deguelle' target="_blank" rel="noreferrer">
                     <Icon isMobile={isMobile} className="fab fa-github" theme={theme}></Icon>
                 </a>
             </LinksWrapper>

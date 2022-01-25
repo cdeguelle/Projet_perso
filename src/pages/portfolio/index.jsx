@@ -190,7 +190,7 @@ function Portfolio() {
                     }
                 />
             </CardContainer>
-            <Button className='button' href='https://github.com/cdeguelle' isMobile={isMobile}>Voir plus sur GitHub</Button>
+            <Button className='button' href='https://github.com/cdeguelle' isMobile={isMobile} target="_blank" rel="noreferrer">Voir plus sur GitHub</Button>
         </PortfolioWrapper>
     )
 }

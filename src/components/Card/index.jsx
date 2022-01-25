@@ -29,7 +29,7 @@ function Card({ link, picture, bg, description }) {
                 </CardFront>
                 <div className="card-back" style={{background: bg}} >
                     {description}
-                    <a href={link} className="btn">Visiter le site</a>
+                    <a href={link} className="btn" target="_blank" rel="noreferrer">Visiter le site</a>
                 </div>
             </CardItem>
         </CardWrapper>
