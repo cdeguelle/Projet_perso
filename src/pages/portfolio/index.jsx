@@ -22,7 +22,7 @@ const PortfolioWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
-    padding-top: ${({ isMobile }) => (isMobile ? '20px' : '0')};
+    padding-top: ${({ isMobile }) => (isMobile ? '20px' : '10vh')};
 `
 
 const CardContainer = styled.div`

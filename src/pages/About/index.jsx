@@ -10,6 +10,8 @@ const AboutWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     height: 80vh;
+    padding-top: 10vh;
+    scroll-margin-top: -10px;
 `
 
 const Text = styled.p`
