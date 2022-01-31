@@ -1,0 +1,11 @@
+.active-dark a {
+    color: white;
+    background: linear-gradient(70deg, blue, pink);
+    border-radius: 5px;
+}
+
+.active-light a {
+    color: white;
+    background: linear-gradient(70deg, #008080, #ff5100);
+    border-radius: 5px;
+}

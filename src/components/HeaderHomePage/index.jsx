@@ -5,6 +5,9 @@ import { selectTheme } from '../../utils/selectors'
 import { SwitchButton } from '../Switch'
 import * as themeActions from '../../features/theme'
 import MenuListComposition from '../MenuList'
+import Scrollspy from 'react-scrollspy'
+import './index.css'
+
 
 const NavContainer = styled.nav`
     background-color: ${({ theme }) => (theme === 'light' ? '#F9F9FC' : '#161B22')};
@@ -13,13 +16,6 @@ const NavContainer = styled.nav`
     z-index: 10;
     padding: 20px 0;
     height: 10vh;
-`
-
-const MenuItems = styled.ul`
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    text-align: center;
 `
 
 const ListItems = styled.li`
@@ -81,23 +77,31 @@ function Header() {
     return (
         <NavContainer theme={theme}>
             {isMobile ? (
-                <MenuItems>
+                <Scrollspy 
+                    items={ ['welcome', 'about', 'portfolio', 'cv'] } 
+                    style={{ display: 'flex', justifyContent: 'space-around', listStyle: 'none', textAlign: 'center' }}
+                    currentClassName={theme === 'light' ? 'active-light' : 'active-dark'}
+                >
                     <ListItems>
                         <MenuListComposition 
                             menuItems={menuItems}
                         />
                     </ListItems>
-                    <ListItems><SwitchButton onClick={() => dispatch(themeActions.toggle())} /></ListItems>
-                </MenuItems>                
+                    <ListItems style={{ marginTop: '8px' }}><SwitchButton onClick={() => dispatch(themeActions.toggle())} /></ListItems>
+                </Scrollspy>                
             ) : (
-                <MenuItems>
+                <Scrollspy 
+                    items={ ['welcome', 'about', 'portfolio', 'cv'] } 
+                    style={{ display: 'flex', justifyContent: 'space-around', listStyle: 'none', textAlign: 'center' }}
+                    currentClassName={theme === 'light' ? 'active-light' : 'active-dark'}
+                >
                     <ListItems><HeaderLink theme={theme} href="#welcome">Acceuil</HeaderLink></ListItems>
                     <ListItems><HeaderLink theme={theme} href="#about">A propos</HeaderLink></ListItems>
                     <ListItems><HeaderLink theme={theme} href="#portfolio">Portfolio</HeaderLink></ListItems>
                     <ListItems><HeaderLink theme={theme} href="#cv">CV</HeaderLink></ListItems>
                     <ListItems><HeaderLink theme={theme} href="mailto:clement.deguelle@hotmail.com">Me contacter</HeaderLink></ListItems>
-                    <ListItems><SwitchButton onClick={() => dispatch(themeActions.toggle())} /></ListItems>
-                </MenuItems>
+                    <ListItems style={{ marginTop: '8px' }}><SwitchButton onClick={() => dispatch(themeActions.toggle())} /></ListItems>
+                </Scrollspy>
             )}
         </NavContainer>
     )
