@@ -80,7 +80,6 @@ function Header() {
                 <Scrollspy 
                     items={ ['welcome', 'about', 'portfolio', 'cv'] } 
                     style={{ display: 'flex', justifyContent: 'space-around', listStyle: 'none', textAlign: 'center' }}
-                    currentClassName={theme === 'light' ? 'active-light' : 'active-dark'}
                 >
                     <ListItems>
                         <MenuListComposition 
