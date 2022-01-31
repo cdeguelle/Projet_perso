@@ -15,7 +15,7 @@ const CardFront = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: ${({ theme }) => (theme === 'light' ? '#ccccd8' : 'white')};
+    background-color: ${({ theme }) => (theme === 'light' ? '#f3f3f3' : 'white')};
 `
 
 function Card({ link, picture, bg, description }) {
