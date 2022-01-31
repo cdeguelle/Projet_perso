@@ -22,6 +22,7 @@ const PortfolioWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
+    padding-top: ${({ isMobile }) => (isMobile ? '20px' : '0')};
 `
 
 const CardContainer = styled.div`
@@ -29,7 +30,7 @@ const CardContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 80px 20px;
+    margin: ${({ isMobile }) => (isMobile ? '20px' : '80px 20px')};
 `
 
 const CardBackDescription = styled.div`
@@ -41,13 +42,14 @@ const CardBackDescription = styled.div`
 const Text = styled.p`
     color: ${({ theme }) => (theme === 'light' ? '#1d1d1f' : 'white')};
     margin-top: 30px;
-    font-size: ${({ isMobile }) => (isMobile ? '8px' : '16px')};
+    font-size: 16px;
+    margin: ${({ isMobile }) => (isMobile ? '30px' : '30px 0 0 0')};
 `
 
 const Button = styled.a`
         width: ${({ isMobile }) => (isMobile ? '80vw' : '380px')};
         height: 86px;
-        font-size: 1.5rem;
+        font-size: ${({ isMobile }) => (isMobile ? '1rem' : '1.5rem')};
         font-family: 'Miriam Libre', sans-serif;
         background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
         border: 0;
@@ -65,11 +67,11 @@ function Portfolio() {
     const isMobile = window.matchMedia('(max-width: 426px)').matches
 
     return (
-        <PortfolioWrapper id='portfolio' theme={theme}>
+        <PortfolioWrapper id='portfolio' theme={theme} isMobile={isMobile}>
             <Subtitle theme={theme} isMobile={isMobile}>Mon travail récent</Subtitle>
             <TitleUnderline />
             <Text theme={theme} isMobile={isMobile}>Voici quelques projets sur lesquels j'ai travaillé récemment. Vous voulez en voir plus ?</Text>
-            <CardContainer theme={theme}>
+            <CardContainer theme={theme} isMobile={isMobile}>
                 <Card
                     link='https://github.com/cdeguelle/ClementDeguelle_2_07122020'
                     picture={reserviaImg}

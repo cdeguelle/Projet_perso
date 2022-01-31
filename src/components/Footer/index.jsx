@@ -19,10 +19,10 @@ const FooterBorder = styled.div`
 `
 
 const FooterText = styled.p`
-    margin: 0;
+    margin: ${({ isMobile }) => (isMobile ? '10px' : '0')};
     padding: 0;
     color: #838080;
-    font-size: ${({ isMobile }) => (isMobile ? '8px' : '16px')};
+    font-size: 16px;
 `
 
 function Footer() {

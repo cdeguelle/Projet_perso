@@ -14,11 +14,11 @@ const AboutWrapper = styled.div`
 
 const Text = styled.p`
     font-family: 'Montserrat Alternates', sans-serif;
-    font-size: ${({ isMobile }) => (isMobile ? '8px' : '16px')};
+    font-size: 16px;
     color: ${({ theme }) => (theme === 'light' ? '#1d1d1f' : 'white')};
     width: ${({ isMobile }) => (isMobile ? '' : '500px')};
     text-align: justify;
-    margin: ${({ isMobile }) => (isMobile ? '50px' : '50px 0 0 0')};
+    margin: ${({ isMobile }) => (isMobile ? '20px' : '50px 0 0 0')};
 `
 
 function About() {

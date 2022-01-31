@@ -4,11 +4,11 @@ import { selectTheme } from '../../utils/selectors'
 import './index.css'
 
 const CardWrapper = styled.div`
-    margin: 30px;
+    margin: ${({ isMobile }) => (isMobile ? '30px 0' : '30px')};
 `
 
 const CardItem = styled.div`
-    width: 360px;
+    width: ${({ isMobile }) => (isMobile ? '300px' : '360px')};
 `
 
 const CardFront = styled.div`
@@ -20,10 +20,11 @@ const CardFront = styled.div`
 
 function Card({ link, picture, bg, description }) {
     const theme = useSelector(selectTheme)
+    const isMobile = window.matchMedia('(max-width: 426px)').matches
 
     return (
-        <CardWrapper className="card-wrapper">
-            <CardItem className="card">
+        <CardWrapper className="card-wrapper" isMobile={isMobile}>
+            <CardItem className="card" isMobile={isMobile}>
                 <CardFront className="card-front" theme={theme}>
                     <img src={picture} alt='website logo' />
                 </CardFront>

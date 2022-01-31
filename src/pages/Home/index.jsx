@@ -26,6 +26,7 @@ const Title = styled.h1`
     -webkit-background-clip: text;
     margin-bottom: 0;
     margin-top: 200px;
+    text-align: ${({ isMobile }) => (isMobile ? 'center' : 'left')};
 `
 
 function Home() {
@@ -37,7 +38,7 @@ function Home() {
             <TitleWrapper isMobile={isMobile}>
                 <Title theme={theme} isMobile={isMobile}>Clément Deguelle</Title>
                 <Subtitle theme={theme} isMobile={isMobile}>Développeur front-end</Subtitle>
-                <Text theme={theme} isMobile={isMobile}>Coder simplement, coder proprement, coder efficacement.</Text>
+                <Text theme={theme}>Coder simplement, coder proprement, coder efficacement.</Text>
             </TitleWrapper>
         </HomeWrapper>
     )

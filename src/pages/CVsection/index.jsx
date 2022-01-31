@@ -18,7 +18,7 @@ const LinksWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-top: 120px;
-    width: ${({ isMobile }) => (isMobile ? '50%' : '30%')};
+    width: ${({ isMobile }) => (isMobile ? '70%' : '50%')};
 `
 
 const Icon = styled.i`
