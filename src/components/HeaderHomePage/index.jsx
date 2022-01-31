@@ -67,11 +67,11 @@ function Header() {
     const dispatch = useDispatch()
     const isMobile = window.matchMedia('(max-width: 426px)').matches
     const menuItems = [
-        {href: '#welcome', text: 'Home'},
-        {href: '#about', text: 'About Me'},
-        {href: '#portfolio', text: 'Home'},
+        {href: '#welcome', text: 'Accueil'},
+        {href: '#about', text: 'A propos'},
+        {href: '#portfolio', text: 'Portfolio'},
         {href: '#cv', text: 'CV'},
-        {href: 'mailto:clement.deguelle@hotmail.com', text: 'Contact Me'}
+        {href: 'mailto:clement.deguelle@hotmail.com', text: 'Me contacter'}
     ]
 
     return (
@@ -95,7 +95,7 @@ function Header() {
                     style={{ display: 'flex', justifyContent: 'space-around', listStyle: 'none', textAlign: 'center' }}
                     currentClassName={theme === 'light' ? 'active-light' : 'active-dark'}
                 >
-                    <ListItems><HeaderLink theme={theme} href="#welcome">Acceuil</HeaderLink></ListItems>
+                    <ListItems><HeaderLink theme={theme} href="#welcome">Accueil</HeaderLink></ListItems>
                     <ListItems><HeaderLink theme={theme} href="#about">A propos</HeaderLink></ListItems>
                     <ListItems><HeaderLink theme={theme} href="#portfolio">Portfolio</HeaderLink></ListItems>
                     <ListItems><HeaderLink theme={theme} href="#cv">CV</HeaderLink></ListItems>

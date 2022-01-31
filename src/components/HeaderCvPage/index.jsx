@@ -119,7 +119,7 @@ function Header() {
     return (
         <NavContainer theme={theme}>
             <MenuItems>
-                <ListItems><StyledLink to='/' theme={theme}>Acceuil</StyledLink></ListItems>
+                <ListItems><StyledLink to='/' theme={theme}>Accueil</StyledLink></ListItems>
                 <ListItems><HeaderLink theme={theme} href="mailto:clement.deguelle@hotmail.com">Me contacter</HeaderLink></ListItems>
                 <ListItems><SwitchButton onClick={() => dispatch(themeActions.toggle())} /></ListItems>
             </MenuItems>
