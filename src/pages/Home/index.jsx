@@ -4,7 +4,7 @@ import { selectTheme } from '../../utils/selectors'
 import { Subtitle } from '../../utils/style/Atoms'
 import { Text } from '../../utils/style/Atoms'
 
-const HomeWrapper = styled.div`
+const HomeWrapper = styled.section`
     background-color: ${({ theme }) => (theme === 'light' ? '#f3f3f3' : '#0D1117')};
     height: 80vh;
 `

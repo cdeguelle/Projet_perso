@@ -8,7 +8,7 @@ export const SwitchButton = styled(Switch)(({ theme }) => ({
     '& .MuiSwitch-switchBase': {
         margin: 1,
         padding: 0,
-        transform: 'translateX(6px)',
+        transform: 'translateX(5px)',
         '&.Mui-checked': {
             color: '#fff',
             transform: 'translateX(22px)',
@@ -19,8 +19,7 @@ export const SwitchButton = styled(Switch)(({ theme }) => ({
             },
             '& + .MuiSwitch-track': {
                 opacity: 1,
-                backgroundColor:
-                    theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
+                backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be'
             },
         },
     },
@@ -33,7 +32,7 @@ export const SwitchButton = styled(Switch)(({ theme }) => ({
             position: 'absolute',
             width: '100%',
             height: '100%',
-            left: 6,
+            left: 5,
             top: 6,
             backgroundRepeat: 'no-repeat',
             backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(

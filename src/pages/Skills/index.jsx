@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { selectTheme } from '../../utils/selectors'
 
-const SkillsWrapper = styled.div`
+const SkillsWrapper = styled.aside`
     background-color: ${({ theme }) => (theme === 'light' ? '#f3f3f3' : '#0D1117')};
     display: flex;
     flex-direction: column;

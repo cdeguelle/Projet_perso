@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { selectTheme } from '../../utils/selectors'
 import './index.css'
 
-const CardWrapper = styled.div`
+const CardWrapper = styled.aside`
     margin: ${({ isMobile }) => (isMobile ? '30px 0' : '30px')};
 `
 

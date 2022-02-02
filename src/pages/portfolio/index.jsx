@@ -16,7 +16,7 @@ import './index.css'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '../../utils/selectors'
 
-const PortfolioWrapper = styled.div`
+const PortfolioWrapper = styled.section`
     background-color: ${({ theme }) => (theme === 'light' ? '#F9F9FC' : '#161B22')};
     display: flex;
     flex-direction: column;

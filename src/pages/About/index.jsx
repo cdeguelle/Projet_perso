@@ -4,7 +4,7 @@ import { selectTheme } from '../../utils/selectors'
 import { Subtitle } from '../../utils/style/Atoms'
 import TitleUnderline from './../../components/TitleUnderline'
 
-const AboutWrapper = styled.div`
+const AboutWrapper = styled.section`
     background-color: ${({ theme }) => (theme === 'light' ? '#F9F9FC' : '#161B22')};
     display: flex;
     flex-direction: column;

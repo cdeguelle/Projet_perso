@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 import { selectTheme } from '../../utils/selectors'
 
-const CvWrapper = styled.div`
+const CvWrapper = styled.section`
     background-color: ${({ theme }) => (theme === 'light' ? '#f3f3f3' : '#0D1117')};
     display: flex;
     flex-direction: column;
